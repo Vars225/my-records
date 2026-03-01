@@ -20,14 +20,13 @@ if not GEMINI_API_KEY:
 genai.configure(api_key=GEMINI_API_KEY)
 
 # Google Sheets Connection Setup
-
 def get_sheet():
     scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
     
-    # Secrets nunchi dict thechukovadam
+    # Dashboard secrets nunchi dict thechukovadam
     creds_dict = dict(st.secrets["GCP_SERVICE_ACCOUNT"])
     
-    # 🌟 SAFETY LINE: Newline characters format ni fix chesthundi
+    # 🌟 KEY FIX: Newline characters format ni auto-fix chesthundi
     creds_dict["private_key"] = creds_dict["private_key"].replace("\\n", "\n")
     
     creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_dict, scope)
@@ -158,3 +157,4 @@ with st.spinner("Fetching data from Google Sheets..."):
     except Exception as e:
 
         st.warning(f"Data load error: {e}")
+
