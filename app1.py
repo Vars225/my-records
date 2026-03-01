@@ -36,7 +36,7 @@ def get_sheet():
 # --- 2. LOGIC FUNCTIONS ---
 def extract_data_from_audio(audio_bytes):
     # User snippet lo unna model name ni use chesthunnam
-    model = genai.GenerativeModel('gemini-2.5-flash') 
+    model = genai.GenerativeModel('gemini-1.5-flash') 
     
     prompt = """
     Listen to this Telugu/English voice note. It contains a village business transaction.
@@ -157,4 +157,5 @@ with st.spinner("Fetching data from Google Sheets..."):
     except Exception as e:
 
         st.warning(f"Data load error: {e}")
+
 
