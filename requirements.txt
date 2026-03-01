@@ -1,0 +1,7 @@
+streamlit
+streamlit-mic-recorder
+google-generativeai
+gspread
+oauth2client
+python-dotenv
+pandas
